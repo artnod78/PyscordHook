@@ -34,7 +34,7 @@ TOPHOOK = {
 }
 
 LOG_CONF = {
-    'log_dir' : 'X:/changeme',
+    'log_dir' : 'X:/changeme/',
     'max_bytes' : 5000000,
     'backup_count' : 5,
 }
