@@ -2,7 +2,7 @@
 Simple Discord Webhook.   
 
 ## Python
-Need Python 3.x
+Need Python 3.x  
 Install packages with pip
   * requests, json
 
@@ -19,3 +19,9 @@ They do not require a bot user or authentication to use.
 
 ## Config
 Edit `settings.py` with your settings.
+
+## Exec
+```powershell
+cd E:/PyscordHook
+python.exe discord_hook.py TOPHOOK
+```
