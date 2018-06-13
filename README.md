@@ -1,0 +1,2 @@
+# PyscordHook
+Simple Webhook
