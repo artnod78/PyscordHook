@@ -26,3 +26,8 @@ For Windows
 cd E:/PyscordHook
 python.exe discord_hook.py TOPHOOK
 ```
+
+## Add webhook
+  * Add new dict like `TOPHOOK` in `settings.py`
+  * Add its var name in `ENABLE_HOOK` in `settings.py`
+  * Import new dict in `discord_hook.py`
