@@ -5,9 +5,7 @@ Created on 13 jun. 2018
 
 @author: artnod
 '''
-import sys
-import os, time, logging, logging.handlers
-from lxml import etree
+import sys, logging, logging.handlers
 from Webhook.Webhook import Simplehook
 from settings import LOG_CONF, ENABLE_HOOK, TOPHOOK
 
@@ -34,10 +32,16 @@ my_logger.addHandler(chandler)
 
 if __name__ == '__main__':
     my_logger.info('Start Discord Hook')
-    if len(sys.argv) > 1 and sys.argv[1] in ENABLE_HOOK:
-        my_logger.info('Send message {}'.format(sys.argv[1]))
-        message = Simplehook(TOPHOOK)
-        message.sendMessage()
+    if len(sys.argv) > 1:
+        myargrs = sys.argv[1:]
+        for myarg in myargrs:
+            if myarg in ENABLE_HOOK:
+                my_logger.info('Send message {}'.format(myarg))
+                message = Simplehook(vars()[myarg])
+                message.sendMessage()
+            else:
+                my_logger.warn('Webhook {} not found!'.format(myarg))
+        
     else:
-        my_logger.warn('Webhook not found!')
+        my_logger.warn('No param!')
         
