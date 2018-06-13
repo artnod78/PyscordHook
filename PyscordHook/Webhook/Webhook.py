@@ -157,7 +157,7 @@ class Webhook:
 class Simplehook:
     def __init__(self, conf):
         """
-        Initialise a sdtdInstance Webhook
+        Initialise a Simplehook Webhook
         """
         self.logger = logging.getLogger('discord_hook.Simplehook')
         self.logger.debug('Init a Simplehook object')
@@ -168,7 +168,7 @@ class Simplehook:
         Send Message
         """
         self.logger.debug(sys._getframe().f_code.co_name)
-        embed = Webhook(self.conf['webhook_url'], color=123123)
+        embed = Webhook(self.conf['webhook_url'], color = self.conf['color'])
         embed.set_author(name = self.conf['message']['author']['name'], icon = self.conf['message']['author']['icon'])
         embed.set_desc(self.conf['message']['desc_text'])
         for field in self.conf['message']['fields']:

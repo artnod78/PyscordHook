@@ -40,8 +40,6 @@ if __name__ == '__main__':
                 message = Simplehook(vars()[myarg])
                 message.sendMessage()
             else:
-                my_logger.warn('Webhook {} not found!'.format(myarg))
-        
+                my_logger.warn('Webhook {} not enable!'.format(myarg))
     else:
-        my_logger.warn('No param!')
-        
+        my_logger.warn('Webhook not found!')
